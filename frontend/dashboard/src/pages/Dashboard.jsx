@@ -12,8 +12,10 @@ const Dashboard = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get("http://localhost:4000/api/blogs");
-        setData(res.data);
+        const res2 = await axios.get("http://localhost:5000/api/fetch"); //
+        const res1= await axios.get("http://localhost:5000/api/blogs")
+        const combinedData = [...res1.data.reverse(), ...res2.data]; 
+        setData(combinedData);
         console.log(data)
       } catch (error) {
         console.error("Error fetching data:", error);

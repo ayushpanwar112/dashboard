@@ -25,8 +25,9 @@ connectdb();
 // Route to fetch blogs from Blogger API and store them in MongoDB
 app.use("/api", blogRoute);
 
+
 // Start the server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

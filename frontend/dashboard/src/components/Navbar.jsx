@@ -6,7 +6,7 @@ const Navbar = () => {
   
     const toggle = async () => {
       try {
-      await axios.post("http://localhost:4000/api/fetch-blogs");
+      await axios.post("http://localhost:5000/api/fetch-blogs");
       console.log("Published successfully");
      
         window.location.reload();
