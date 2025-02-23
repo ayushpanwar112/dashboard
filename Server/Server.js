@@ -11,6 +11,8 @@ dotenv.config();
 
 // Initialize Express app
 const app = express();
+app.use(express.json());
+
 app.get("/",(req,res)=>{
   res.send("Hello World");
 })
@@ -24,6 +26,7 @@ connectdb();
 
 // Route to fetch blogs from Blogger API and store them in MongoDB
 app.use("/api", blogRoute);
+
 
 
 // Start the server

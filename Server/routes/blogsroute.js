@@ -5,6 +5,7 @@ import reviewController from "../controller/reviewControllers.js";
 import axios from "axios";
 import wordpressController from "../controller/wordpressController.js";
 import getReview from "../controller/getReview.js";
+import email  from "../controller/email.js";
 
 
 
@@ -12,11 +13,11 @@ const blogRoute = express.Router();
 
 blogRoute.post("/fetch-blogs", blogController);
 blogRoute.get("/blogs", getController);
- blogRoute.get("/fetch-reviews",reviewController);
+blogRoute.get("/fetch-reviews",reviewController);
  blogRoute.get("/review",getReview);
  
  blogRoute.get("/fetch",wordpressController)
-
+ blogRoute.post("/email",email)
 /*  blogRoute.post("/post", async (req, res) => {
     try {
       const response = await axios.get("http://localhost:7000/api/posts");
